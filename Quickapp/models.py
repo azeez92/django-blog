@@ -20,9 +20,8 @@ class Blog_Post(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True )
-    slug = models.SlugField(unique=True, blank=True)
-
-    author = models.ForeignKey(User, on_delete= models.CASCADE)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    author = models.ForeignKey(User, on_delete = models.CASCADE)
     created_on = models.DateTimeField(auto_now =True)
     status = models.CharField(max_length=10, choices=options, default='draft')
 

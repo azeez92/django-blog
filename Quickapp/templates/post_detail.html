@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %} 
+<h1>{{ f_post.title }}</h1>
+{% if abc.image %}
+        <img src="{{ abc.image.url }}" style="width:100%; height: 350px; object-fit: cover" alt="{{ abc.title}}">
+        {% endif %}
+
+        <p>By {{ abc.author }} on {{ abc.created_on}}</p>
+        <p>{{ abc.body }}</p>
+
+
+        <a href="{% url 'index'%}"
+    {% endblock %}

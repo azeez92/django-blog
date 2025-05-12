@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Blog_Post
+
 
 
 # Create your views here.
@@ -27,4 +28,6 @@ def news(request):
     full_post = Blog_Post.objects.all().order_by('-created_on')
     return render(request, 'news.html', {'full_post': full_post})
 
-
+def post_detail(request, slug):
+    f_post = get_object_or_404(Blog_Post, slug=slug)
+    return render(request, 'post_detail.html', {'f_post': f_post})

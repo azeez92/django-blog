@@ -12,7 +12,7 @@ urlpatterns = [
     path('politics/', views.politics, name="politics"),
     path('others/', views.others, name="others"),
     path('sport/', views.sport, name="sport"),
-  
+    path('post/<slug:slug>', views.post_detail, name='post_detail')
 
 ]
 
