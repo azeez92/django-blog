@@ -20,10 +20,11 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Quickapp.urls')),
-    path('business/', include('Quickapp.urls')),
-    path('sport/', include('Quickapp.urls')),
-    path('news/', include('Quickapp.urls')),
-    path('other/', include('Quickapp.urls')),
-    path('politics/', include('Quickapp.urls')),
+    path('account/', include('django.contrib.auth.urls')),
+
+    # path('sport/', include('Quickapp.urls')),
+    # path('news/', include('Quickapp.urls')),
+    # path('other/', include('Quickapp.urls')),
+    # path('politics/', include('Quickapp.urls')),
    
 ]
